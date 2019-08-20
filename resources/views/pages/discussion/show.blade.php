@@ -7,7 +7,6 @@
         {{ session('success') }}
     </div>
     @endif
-    @foreach ($discussions as $discussion)
         <div class="card mb-3">
             <div class="card-header">
                 <div class="d-flex justify-content-between">
@@ -22,10 +21,11 @@
             </div>
 
             <div class="card-body">
-                <span style="font-size:130%"><strong>{{ $discussion->title }}</strong></span>
+                <div style="font-size:130%" class="text-center">
+                    <strong>{{ $discussion->title }}</strong>
+                </div>
+                {!! $discussion->content !!}
             </div>
         </div>
-    @endforeach
-    {!! $discussions->links() !!}
 </div>
 @endsection
